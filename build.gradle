@@ -71,6 +71,8 @@ minecraft {
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
             property 'forge.enabledGameTestNamespaces', 'moresounds'
 
+            arg "-mixin.config=moresounds.mixin.json"
+
             mods {
                 moresounds {
                     source sourceSets.main
@@ -174,7 +176,8 @@ jar {
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
                 //"Implementation-Vendor": "moresounds authors",
-                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+                "MixinConfigs": "moresounds.mixins.json"
         ])
     }
 }
